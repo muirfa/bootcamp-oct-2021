@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Parsing JSON from Ajax</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div id="demo"></div>
+        <div id="age"></div>
+        <div id="city"></div>
+        <script>
+            var ajax =  new XMLHttpRequest();
+            ajax.onreadystatechange = function(){
+                if(this.readyState == 4 && this.status == 200){
+                    var myObj = JSON.parse(this.responseText);
+                    document.getElementById("demo").innerHTML = myObj.name;
+                    document.getElementById("age").innerHTML = myObj.age;
+                    document.getElementById("city").innerHTML = myObj.city;
+                }
+                };
+                ajax.open("GET", "user.json",true);
+                ajax.send();
+        </script>
+    </body>
+</html>

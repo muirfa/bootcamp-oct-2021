@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Looping Object field in JS</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div id="demo"></div>
+        <div id="value"></div>
+        <script>
+            var myObj =  {"name":"John", "age":31, "city":"New York"};
+            for(field in myObj){
+                document.getElementById("demo").innerHTML += field + ",";
+                document.getElementById("value").innerHTML += myObj[field] + ",";
+            }
+        </script>
+    </body>
+</html>
